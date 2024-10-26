@@ -44,6 +44,6 @@ while u != 0
 end
 
 d = Int(g*v)
-println("d:", d)
+println("d(НОД):", d)
 println("x:", x_y_array[3])
 println("y:", x_y_array[4])

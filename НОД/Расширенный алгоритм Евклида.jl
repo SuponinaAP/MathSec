@@ -11,6 +11,6 @@ while r_array[i]%r_array[i+1] != 0
     global i += 1
 end
 
-println("d:", r_array[i+1])
+println("d(НОД):", r_array[i+1])
 println("x:", x_array[i+1])
 println("y:", y_array[i+1])
