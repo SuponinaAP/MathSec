@@ -1,34 +1,22 @@
-n = 15
-a = 7
+n = 21
+a = 3
 
 # Проверка условий
 
-if (n % 2 == 0) | (n < 3)
+if (n % 2 == 0) || (n < 5)
     println("Введите другое n")
 else
     println("Всё отлично продолжаем работу")
 end
 
 
-if (a < 0) | (a >= n)
+if (a < 2) || (a > n - 2)
     println("Введите другое a")
 else
     println("Всё отлично продолжаем работу")
 end
 
-# функция для приведения a к виду 2^k*a1
-
-function devide(a)
-    k = 0
-    while a % 2 == 0 
-        k += 1
-        a = Int(a / 2)
-    end
-    return a, k
-end
-
 # Символ Якоби
-
 
 function jacoby(a, n, g = 1)
 
@@ -66,5 +54,25 @@ function jacoby(a, n, g = 1)
     end
 end
 
-res = jacoby(a, n)
-println("Результат: $res")
+r = (a^((n-1)/2)) % n
+
+function solovey_shtrassen(r, n, a)
+    if r != 1 && r != n - 1 
+        return("Число $n составное")
+    end
+
+    s = jacoby(a, n)
+
+    if s < 0
+        s += n
+    end
+
+    if (r - s) % n == 0
+        return("Число $n, вероятно, простое")
+    else
+        return("Число $n составное")
+    end
+end
+
+res = solovey_shtrassen(r, n, a)
+println(res)
