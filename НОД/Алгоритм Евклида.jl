@@ -1,4 +1,4 @@
-r_array = [81, 23]
+r_array = [64, 32]
 i = 1
 while i <= 1000 
   push!(r_array, r_array[i]%r_array[i+1])

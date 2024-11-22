@@ -1,5 +1,6 @@
 using Random
 
+Random.seed!(65)
 k = ""
 text = "Have a nice day"
 k *= randstring(['A':'Z'; 'a':'z'; '0':'9'], length(text)) #создание рандомного ключа длины текста
